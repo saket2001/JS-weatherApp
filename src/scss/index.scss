@@ -46,6 +46,30 @@ $font-bold:800px;
             }
         }
 
+        .form {
+            width: 100%;
+            @include flex(row);
+
+            input[type=text] {
+                @include outBorNone();
+                font-size: 19px;
+                padding: 8px 2%;
+                margin: 1%;
+                border-radius: 5px;
+
+            }
+
+            #submit_btn {
+                @include outBorNone();
+                padding: 8px 2%;
+                margin: 1% 0;
+                font-size: 19px;
+                background-color: rgb(16, 16, 122);
+                color: $light-font;
+                border-radius: 5px;
+            }
+        }
+
         .weather__container {
             box-shadow: 5px 5px 17px #1d2f33;
             @include flex(column);
@@ -163,6 +187,24 @@ $font-bold:800px;
                 }
             }
 
+            .form {
+                width: 100%;
+                @include flex(row);
+                margin: 2% 0;
+
+                input[type=text] {
+                    width: 60%;
+                    font-size: 18px;
+                    padding: 8px 1%;
+
+                }
+
+                #submit_btn {
+                    padding: 8px 3%;
+                    font-size: 18px;
+                }
+            }
+
             .weather__container {
                 width: 80%;
                 height: 70vh;
@@ -193,7 +235,12 @@ $font-bold:800px;
                 }
 
                 .weather__other_details {
+                    flex-wrap: wrap;
                     font-size: 16px;
+
+                    .weather__detail {
+                        padding: 1%;
+                    }
                 }
 
                 .weather__footer {

@@ -83,6 +83,43 @@ body {
   padding: 0 1%;
 }
 
+.container main .form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container main .form input[type=text] {
+  outline: none;
+  border: none;
+  font-size: 19px;
+  padding: 8px 2%;
+  margin: 1%;
+  border-radius: 5px;
+}
+
+.container main .form #submit_btn {
+  outline: none;
+  border: none;
+  padding: 8px 2%;
+  margin: 1% 0;
+  font-size: 19px;
+  background-color: #10107a;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
 .container main .weather__container {
   -webkit-box-shadow: 5px 5px 17px #1d2f33;
           box-shadow: 5px 5px 17px #1d2f33;
@@ -268,6 +305,32 @@ body {
   .container main .error-box p {
     font-size: 16px;
   }
+  .container main .form {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 2% 0;
+  }
+  .container main .form input[type=text] {
+    width: 60%;
+    font-size: 18px;
+    padding: 8px 1%;
+  }
+  .container main .form #submit_btn {
+    padding: 8px 3%;
+    font-size: 18px;
+  }
   .container main .weather__container {
     width: 80%;
     height: 70vh;
@@ -292,7 +355,12 @@ body {
     font-size: 40px;
   }
   .container main .weather__container .weather__other_details {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     font-size: 16px;
+  }
+  .container main .weather__container .weather__other_details .weather__detail {
+    padding: 1%;
   }
   .container main .weather__container .weather__footer .weather__block {
     font-size: 16px;
