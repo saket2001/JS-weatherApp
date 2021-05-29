@@ -100,19 +100,15 @@ const loadErrorMsg = function (msg) {
 //     });
 //   }
 // };
-
 const getData = async function (cityName) {
   try {
     if (!cityName) throw new Error("Please type a valid city name");
 
-    const url = `http://api.weatherapi.com/v1/forecast.json?key=18fdeb53a3a44ea5a21131705212505&q=${cityName}&days=2&aqi=yes&alerts=no`;
+    // const url = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}`;
+    const url = `https://cors-anywhere.herokuapp.com/http://api.weatherapi.com/v1/forecast.json?key=18fdeb53a3a44ea5a21131705212505&q=${cityName}&days=2&aqi=yes&alerts=no`;
 
-    const res = await fetch(url, {
-      method: "GET",
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-      },
-    });
+    const res = await fetch(url);
+    console.log(res);
     const data = await res.json();
 
     console.log(data);
@@ -125,5 +121,5 @@ const getData = async function (cityName) {
 // window.addEventListener("load", currPositionWeather);
 searchBtn.addEventListener("click", function (e) {
   e.preventDefault();
-  getData(`${CityInput.value}`);
+  getData(CityInput.value);
 });
