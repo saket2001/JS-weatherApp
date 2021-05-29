@@ -74,51 +74,21 @@ const loadErrorMsg = function (msg) {
   mainContainer.insertAdjacentHTML("afterbegin", markup);
 };
 
-// const loadData = async function (position) {
-//   try {
-//     const { latitude } = position.coords;
-//     const { longitude } = position.coords;
-
-//     const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly&appid=${API_KEY}`;
-
-//     const data = await fetchData(url);
-
-//     // console.log(data);
-//     // setting data
-//     setData(data);
-//   } catch (err) {
-//     loadErrorMsg(err);
-//   }
-// };
-
-// const currPositionWeather = function () {
-//   if (navigator.geolocation) {
-//     navigator.geolocation.getCurrentPosition(loadData, function () {
-//       loadErrorMsg(
-//         `OOPS!! Not able to get your location<br>Try Again with your location ON`
-//       );
-//     });
-//   }
-// };
 const getData = async function (cityName) {
   try {
     if (!cityName) throw new Error("Please type a valid city name");
 
-    // const url = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}`;
     const url = `https://cors-anywhere.herokuapp.com/http://api.weatherapi.com/v1/forecast.json?key=18fdeb53a3a44ea5a21131705212505&q=${cityName}&days=2&aqi=yes&alerts=no`;
 
     const res = await fetch(url);
-    console.log(res);
     const data = await res.json();
 
-    console.log(data);
     setData(data);
   } catch (err) {
     loadErrorMsg(err);
   }
 };
 //////////////////////////////
-// window.addEventListener("load", currPositionWeather);
 searchBtn.addEventListener("click", function (e) {
   e.preventDefault();
   getData(CityInput.value);
