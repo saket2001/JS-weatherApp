@@ -81,6 +81,8 @@ const getData = async function (cityName) {
     const url = `https://cors-anywhere.herokuapp.com/http://api.weatherapi.com/v1/forecast.json?key=18fdeb53a3a44ea5a21131705212505&q=${cityName}&days=2&aqi=yes&alerts=no`;
 
     const res = await fetch(url);
+    console.log(res);
+    if (!res) return;
     const data = await res.json();
 
     setData(data);
